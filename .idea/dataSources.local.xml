@@ -8,8 +8,8 @@
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>ardit</user-name>
-      <introspection-scope>snappea_development:public,pg_catalog,ardit</introspection-scope>
-      <resolve-scope>snappea_development:public,ardit</resolve-scope>
+      <introspection-scope>snappea_development:ardit,pg_catalog,public</introspection-scope>
+      <resolve-scope>snappea_development:ardit,public</resolve-scope>
     </data-source>
   </component>
 </project>
