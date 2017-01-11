@@ -2,14 +2,8 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="PostgreSQL - snappea_development@localhost" uuid="879af265-9320-4815-a020-6f9110d65dbb">
-      <database-info product="PostgreSQL" version="9.5.4" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
-        <identifier-quote-string>&quot;</identifier-quote-string>
-      </database-info>
-      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>ardit</user-name>
-      <introspection-scope>snappea_development:public,pg_catalog,ardit</introspection-scope>
-      <resolve-scope>snappea_development:public,ardit</resolve-scope>
     </data-source>
   </component>
 </project>
