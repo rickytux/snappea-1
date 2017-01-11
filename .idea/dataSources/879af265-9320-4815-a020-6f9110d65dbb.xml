@@ -1,0 +1,295 @@
+<dataSource name="PostgreSQL - snappea_development@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="2.6">
+    <database id="1" name="snappea_development">
+      <object-id>156073</object-id>
+      <visible>1</visible>
+    </database>
+    <database id="2" name="postgres">
+      <object-id>12411</object-id>
+    </database>
+    <database id="3" name="test_cms">
+      <object-id>16416</object-id>
+    </database>
+    <database id="4" name="eshop">
+      <object-id>24711</object-id>
+    </database>
+    <database id="5" name="CIKISI_development">
+      <object-id>32899</object-id>
+    </database>
+    <database id="6" name="CIKISI_test">
+      <object-id>32900</object-id>
+    </database>
+    <database id="7" name="snappea_test">
+      <object-id>156074</object-id>
+    </database>
+    <schema id="8" parent="1" name="public">
+      <object-id>2200</object-id>
+      <visible>1</visible>
+      <introspection-state-number>4313</introspection-state-number>
+      <introspection-timestamp>2017-01-11.23:11:46.314</introspection-timestamp>
+    </schema>
+    <schema id="9" parent="1" name="pg_catalog">
+      <object-id>11</object-id>
+    </schema>
+    <schema id="10" parent="1" name="pg_toast">
+      <object-id>99</object-id>
+    </schema>
+    <schema id="11" parent="1" name="pg_temp_1">
+      <object-id>11816</object-id>
+    </schema>
+    <schema id="12" parent="1" name="pg_toast_temp_1">
+      <object-id>11817</object-id>
+    </schema>
+    <schema id="13" parent="1" name="information_schema">
+      <object-id>12119</object-id>
+    </schema>
+    <sequence id="14" parent="8" name="menu_item_categories_id_seq">
+      <object-id>156225</object-id>
+      <state-number>4312</state-number>
+    </sequence>
+    <sequence id="15" parent="8" name="menu_item_tags_id_seq">
+      <object-id>156236</object-id>
+      <state-number>4313</state-number>
+    </sequence>
+    <sequence id="16" parent="8" name="menu_items_id_seq">
+      <object-id>156214</object-id>
+      <state-number>4311</state-number>
+    </sequence>
+    <sequence id="17" parent="8" name="restaurants_id_seq">
+      <object-id>156203</object-id>
+      <state-number>4310</state-number>
+    </sequence>
+    <table id="18" parent="8" name="ar_internal_metadata">
+      <object-id>156083</object-id>
+      <state-number>4284</state-number>
+    </table>
+    <table id="19" parent="8" name="menu_item_categories">
+      <object-id>156227</object-id>
+      <state-number>4312</state-number>
+    </table>
+    <table id="20" parent="8" name="menu_item_tags">
+      <object-id>156238</object-id>
+      <state-number>4313</state-number>
+    </table>
+    <table id="21" parent="8" name="menu_items">
+      <object-id>156216</object-id>
+      <state-number>4311</state-number>
+    </table>
+    <table id="22" parent="8" name="restaurants">
+      <object-id>156205</object-id>
+      <state-number>4310</state-number>
+    </table>
+    <table id="23" parent="8" name="schema_migrations">
+      <object-id>156075</object-id>
+      <state-number>4283</state-number>
+    </table>
+    <column id="24" parent="18" name="key">
+      <state-number>4284</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="25" parent="18" name="value">
+      <state-number>4284</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="26" parent="18" name="created_at">
+      <state-number>4284</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="27" parent="18" name="updated_at">
+      <state-number>4284</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <index id="28" parent="18" name="ar_internal_metadata_pkey">
+      <object-id>156089</object-id>
+      <columns>key</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="29" parent="18" name="ar_internal_metadata_pkey">
+      <object-id>156090</object-id>
+      <columns>key</columns>
+      <underlying-index>ar_internal_metadata_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="30" parent="19" name="id">
+      <state-number>4312</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval('menu_item_categories_id_seq'::regclass)</default-expression>
+    </column>
+    <column id="31" parent="19" name="menu_item_id">
+      <state-number>4312</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="32" parent="19" name="name">
+      <state-number>4312</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="33" parent="19" name="created_at">
+      <state-number>4312</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="34" parent="19" name="updated_at">
+      <state-number>4312</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <index id="35" parent="19" name="menu_item_categories_pkey">
+      <object-id>156234</object-id>
+      <columns>id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="36" parent="19" name="menu_item_categories_pkey">
+      <object-id>156235</object-id>
+      <columns>id</columns>
+      <underlying-index>menu_item_categories_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="37" parent="20" name="id">
+      <state-number>4313</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval('menu_item_tags_id_seq'::regclass)</default-expression>
+    </column>
+    <column id="38" parent="20" name="menu_item_id">
+      <state-number>4313</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="39" parent="20" name="tag">
+      <state-number>4313</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="40" parent="20" name="created_at">
+      <state-number>4313</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="41" parent="20" name="updated_at">
+      <state-number>4313</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <index id="42" parent="20" name="menu_item_tags_pkey">
+      <object-id>156245</object-id>
+      <columns>id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="43" parent="20" name="menu_item_tags_pkey">
+      <object-id>156246</object-id>
+      <columns>id</columns>
+      <underlying-index>menu_item_tags_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="44" parent="21" name="id">
+      <state-number>4311</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval('menu_items_id_seq'::regclass)</default-expression>
+    </column>
+    <column id="45" parent="21" name="resturant_id">
+      <state-number>4311</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="46" parent="21" name="name">
+      <state-number>4311</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="47" parent="21" name="description">
+      <state-number>4311</state-number>
+      <data-type>text|0</data-type>
+    </column>
+    <column id="48" parent="21" name="category_id">
+      <state-number>4311</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="49" parent="21" name="created_at">
+      <state-number>4311</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="50" parent="21" name="updated_at">
+      <state-number>4311</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <index id="51" parent="21" name="menu_items_pkey">
+      <object-id>156223</object-id>
+      <columns>id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="52" parent="21" name="menu_items_pkey">
+      <object-id>156224</object-id>
+      <columns>id</columns>
+      <underlying-index>menu_items_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="53" parent="22" name="id">
+      <state-number>4310</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval('restaurants_id_seq'::regclass)</default-expression>
+    </column>
+    <column id="54" parent="22" name="name">
+      <state-number>4310</state-number>
+      <data-type>varchar|0</data-type>
+    </column>
+    <column id="55" parent="22" name="description">
+      <state-number>4310</state-number>
+      <data-type>text|0</data-type>
+    </column>
+    <column id="56" parent="22" name="rating">
+      <state-number>4310</state-number>
+      <data-type>numeric|0</data-type>
+    </column>
+    <column id="57" parent="22" name="address">
+      <state-number>4310</state-number>
+      <data-type>text|0</data-type>
+    </column>
+    <column id="58" parent="22" name="created_at">
+      <state-number>4310</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="59" parent="22" name="updated_at">
+      <state-number>4310</state-number>
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+    </column>
+    <index id="60" parent="22" name="restaurants_pkey">
+      <object-id>156212</object-id>
+      <columns>id</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="61" parent="22" name="restaurants_pkey">
+      <object-id>156213</object-id>
+      <columns>id</columns>
+      <underlying-index>restaurants_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="62" parent="23" name="version">
+      <state-number>4283</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar|0</data-type>
+    </column>
+    <index id="63" parent="23" name="schema_migrations_pkey">
+      <object-id>156081</object-id>
+      <columns>version</columns>
+      <desc-columns />
+      <unique>1</unique>
+    </index>
+    <key id="64" parent="23" name="schema_migrations_pkey">
+      <object-id>156082</object-id>
+      <columns>version</columns>
+      <underlying-index>schema_migrations_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>
