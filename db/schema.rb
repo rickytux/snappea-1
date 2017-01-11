@@ -16,10 +16,9 @@ ActiveRecord::Schema.define(version: 20170111223533) do
   enable_extension "plpgsql"
 
   create_table "menu_item_categories", force: :cascade do |t|
-    t.integer  "menu_item_id"
     t.string   "name"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "menu_item_tags", force: :cascade do |t|
@@ -30,12 +29,12 @@ ActiveRecord::Schema.define(version: 20170111223533) do
   end
 
   create_table "menu_items", force: :cascade do |t|
-    t.integer  "resturant_id"
+    t.integer  "restaurant_id"
     t.string   "name"
     t.text     "description"
     t.integer  "category_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "restaurant_addresses", force: :cascade do |t|
