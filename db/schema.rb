@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170111220925) do
+ActiveRecord::Schema.define(version: 20170111223533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,13 @@ ActiveRecord::Schema.define(version: 20170111220925) do
   create_table "menu_item_categories", force: :cascade do |t|
     t.integer  "menu_item_id"
     t.string   "name"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "menu_item_tags", force: :cascade do |t|
+    t.integer  "menu_item_id"
+    t.string   "tag"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
@@ -31,11 +38,28 @@ ActiveRecord::Schema.define(version: 20170111220925) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "restaurant_addresses", force: :cascade do |t|
+    t.integer  "restaurant_id"
+    t.string   "street_1"
+    t.string   "street_2"
+    t.string   "country"
+    t.string   "city"
+    t.string   "zip_code"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "restaurant_ratings", force: :cascade do |t|
+    t.integer  "restaurant_id"
+    t.decimal  "rating"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "restaurants", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.decimal  "rating"
-    t.text     "address"
+    t.integer  "address_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

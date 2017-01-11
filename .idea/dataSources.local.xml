@@ -3,7 +3,7 @@
   <component name="dataSourceStorageLocal">
     <data-source name="PostgreSQL - snappea_development@localhost" uuid="879af265-9320-4815-a020-6f9110d65dbb">
       <secret-storage>master_key</secret-storage>
-      <user-name>ardit</user-name>
+      <user-name>postgres</user-name>
     </data-source>
   </component>
 </project>
