@@ -1,7 +1,7 @@
 class MenuItemSerializer < ActiveModel::Serializer
-  attributes :id, :name, :description, :menu_category, :menu_tags
+  attributes :id, :name, :description, :category, :menu_tags
 
-  def menu_category
+  def category
     object.menu_item_category.name
   end
 

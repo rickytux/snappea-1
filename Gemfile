@@ -25,12 +25,6 @@ gem 'pg', '~> 0.18'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
-gem 'passenger'
-#pagination
-gem 'will_paginate'
-gem 'api-pagination'
-gem 'active_model_serializers', '~> 0.10.0'
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
@@ -43,6 +37,13 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'faker', '~> 1.6', '>= 1.6.6'
 
+  #pagination
+  gem 'will_paginate'
+  gem 'api-pagination'
+  #endpagination
+
+  gem 'active_model_serializers', '~> 0.10.0'
+  gem 'passenger'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
