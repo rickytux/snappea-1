@@ -1,7 +1,5 @@
 class ApplicationController < ActionController::API
   before_filter :restrict_access
-  respond_to :json
-
   # Actions omitted
 
   private
