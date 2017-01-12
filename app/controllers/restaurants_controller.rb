@@ -1,20 +1,19 @@
 class RestaurantsController < ApplicationController
-
+  before_action :set_restaurant, only: [:menu_items]
 
   def index
-    restaurants = Restaurant.joins(:restaurant_rating)
-                      .group(:id)
-                      .order(:id)
-                      .select('restaurants.id','restaurants.name', 'restaurants.description', 'avg(restaurant_ratings.rating) as rating')
-    return render json: restaurants
+    restaurants = Restaurant.includes(:restaurant_address).select('restaurants.*').with_rating.order(:id)
+
+    render json: restaurants
   end
 
-  def show
-    m = MenuItem.joins("LEFT JOIN menu_item_categories ON menu_items.category_id = menu_item_categories.id")
-                .where(restaurant_id: params[:id])
-                .select('id','name','description','menu_item_categories.name as category')
-
-    return render json: m
+  def menu_items
+    render json: @restaurant.menu_items
   end
 
+  private
+
+  def set_restaurant
+    @restaurant = Restaurant.select('restaurants.*').with_rating.find(params[:id])
+  end
 end
