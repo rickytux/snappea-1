@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+if(ApiKey.count == 0)
+  ApiKey.create!
+end
+
 MenuItemCategory.first_or_create([{name: 'Entree'}, {name: 'Appetizer'}, {name: 'Dessert'}, {name: 'Beverage'}, {name: 'Side'}])
 resturants = Restaurant.create([{ name: Faker::Company.name, description: Faker::Lorem.paragraph, address_id: 1 }, { name: Faker::Company.name, description: Faker::Lorem.paragraph}, { name: Faker::Company.name, description: Faker::Lorem.paragraph}, { name: Faker::Company.name, description: Faker::Lorem.paragraph}, { name: Faker::Company.name, description: Faker::Lorem.paragraph}, { name: Faker::Company.name, description: Faker::Lorem.paragraph}, { name: Faker::Company.name, description: Faker::Lorem.paragraph }, { name: Faker::Company.name, description: Faker::Lorem.paragraph }, { name: Faker::Company.name, description: Faker::Lorem.paragraph }, { name: Faker::Company.name, description: Faker::Lorem.paragraph }])
 resturants.each do |restaurant|
@@ -12,13 +16,13 @@ resturants.each do |restaurant|
   restaurant.address_id = address.id
   restaurant.save
 
-  (1..5).each do |restaurant_rating|
+  (1..5).each do
     RestaurantRating.create(restaurant_id: restaurant.id, rating: Faker::Number.between(0, 5))
   end
 
-  (1..5).each do |menu_item|
+  (1..5).each do
     menu_item = MenuItem.create(restaurant_id: restaurant.id, name: Faker::Food.ingredient, description: Faker::Food.spice, category_id: MenuItemCategory.order("RANDOM()").first.id)
-    (1..5).each do |menu_item_tag|
+    (1..5).each do
         MenuItemTag.create(menu_item_id: menu_item.id, tag: Faker::Lorem.word)
     end
   end
