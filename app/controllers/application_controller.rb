@@ -1,12 +1,13 @@
 class ApplicationController < ActionController::API
-  before_filter :restrict_access
-  respond_to :json
+include ActionController::HttpAuthentication::Token::ControllerMethods
 
-  # Actions omitted
+#before_filter :restrict_access
 
   private
   def restrict_access
-    api_key = ApiKey.find_by_access_token(params[:guid])
-    head :unauthorized unless api_key
+    authenticate_or_request_with_http_token do |token, options|
+      api_key = ApiKey.where(guid: token).first
+      head :unauthorized unless api_key
+    end
   end
 end
