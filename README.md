@@ -1,30 +1,41 @@
-1. Ruby version
-	Ruby 2.3.1 - Rails 5.0.1
+### Ruby version
 
-2. System dependencies
-	None
+Ruby 2.3.1 - Rails 5.0.1
 
-3. Configuration
-	1. Clone the code from Git repository https://github.com/arditvula/snappea
-	2. Run command "bundle install"
+### System dependencies
 
-4. Database creation
-	1. Change the database.yml default username and password
-	2. Run command "rake db:create"
+None
 
-5. Databse initialization
-	1. Run command "rake db:migrate"
-	2. Run command "rake db:seed"
+### Configuration
 
-6. How to run a test suite
-	Use CURL or a client APP like Postman. 
-	
-	curl -IH "Authorization: Token token="GUID" http://localhost:3000/restaurants
-	curl -IH "Authorization: Token token="GUID" http://localhost:3000/restaurants/1/menu_items
+Clone the code from Git repository https://github.com/arditvula/snappea
+And then run
+```sh
+$ bundle install
+```
 
-	You can find the GUID in api_keys table, after you run the "rake db:seed".
+### Database setup
 
+Change the database.yml default username and password
+And then run
+```sh
+$ rake db:create
+```
 
+### Database initialization
+
+```sh
+$ rake db:migrate
+$ rake db:seed
+```
+
+### How to run a test suite
+
+Use CURL or a client APP like Postman. You can find the GUID in api_keys table, after you run the `rake db:seed.
+```sh
+$ curl -IH "Authorization: Token token="GUID" http://localhost:3000/restaurants
+$ curl -IH "Authorization: Token token="GUID" http://localhost:3000/restaurants/1/menu_items
+```
 
 
 
