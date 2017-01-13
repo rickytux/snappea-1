@@ -65,8 +65,17 @@ ActiveRecord::Schema.define(version: 20170111233401) do
     t.string   "name"
     t.text     "description"
     t.integer  "address_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.integer  "menu_items_id"
+    t.integer  "restaurant_ratings_id"
+    t.integer  "restaurant_address_id"
+    t.index ["menu_items_id"], name: "index_restaurants_on_menu_items_id", using: :btree
+    t.index ["restaurant_address_id"], name: "index_restaurants_on_restaurant_address_id", using: :btree
+    t.index ["restaurant_ratings_id"], name: "index_restaurants_on_restaurant_ratings_id", using: :btree
   end
 
+  add_foreign_key "restaurants", "menu_items", column: "menu_items_id"
+  add_foreign_key "restaurants", "restaurant_addresses"
+  add_foreign_key "restaurants", "restaurant_ratings", column: "restaurant_ratings_id"
 end

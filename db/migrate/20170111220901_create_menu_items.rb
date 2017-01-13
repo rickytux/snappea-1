@@ -5,8 +5,8 @@ class CreateMenuItems < ActiveRecord::Migration[5.0]
       t.string :name
       t.text :description
       t.integer :category_id
-
       t.timestamps
     end
+    add_reference :restaurants, :menu_items, index: true, foreign_key: true
   end
 end

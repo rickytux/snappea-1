@@ -7,8 +7,8 @@ class CreateRestaurantAddresses < ActiveRecord::Migration[5.0]
       t.string :country
       t.string :city
       t.string :zip_code
-
       t.timestamps
     end
+    add_reference :restaurants, :restaurant_address, index: true, foreign_key: true
   end
 end
