@@ -31,7 +31,7 @@ $ rake db:seed
 
 ### How to run a test suite
 
-Use CURL or a client APP like Postman. You can find the GUID in api_keys table, after you run the `rake db:seed.
+Use CURL or a client APP like Postman. You can find the GUID in api_keys table, after you run the `rake db:seed`.
 ```sh
 $ curl -IH "Authorization: Token token="GUID" http://localhost:3000/restaurants
 $ curl -IH "Authorization: Token token="GUID" http://localhost:3000/restaurants/1/menu_items
