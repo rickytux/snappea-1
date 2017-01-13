@@ -1,24 +1,30 @@
-# README
+1. Ruby version
+	Ruby 2.3.1 - Rails 5.0.1
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+2. System dependencies
+	None
 
-Things you may want to cover:
+3. Configuration
+	1. Clone the code from Git repository https://github.com/arditvula/snappea
+	2. Run command "bundle install"
 
-* Ruby version
+4. Database creation
+	1. Change the database.yml default username and password
+	2. Run command "rake db:create"
 
-* System dependencies
+5. Databse initialization
+	1. Run command "rake db:migrate"
+	2. Run command "rake db:seed"
 
-* Configuration
+6. How to run a test suite
+	Use CURL or a client APP like Postman. 
+	
+	curl -IH "Authorization: Token token="GUID" http://localhost:3000/restaurants
+	curl -IH "Authorization: Token token="GUID" http://localhost:3000/restaurants/1/menu_items
 
-* Database creation
+	You can find the GUID in api_keys table, after you run the "rake db:seed".
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
